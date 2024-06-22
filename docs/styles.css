@@ -196,3 +196,68 @@ hr {
 .social-icons a:hover {
   color: #0056b3;
 }
+
+
+/* MEDIA QUERYS */
+
+/* Media Query para menu sanduíche em telas menores */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostra o ícone do menu sanduíche */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  /* Quando o checkbox está marcado, exibe a lista de itens da navbar */
+  #menu-toggle:checked + .menu-toggle + .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 3rem; /* Ajusta a posição abaixo do botão */
+    right: 0;
+    background-color: #1D4166;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* Esconde a lista de itens quando o checkbox não está marcado */
+  #menu-toggle:not(:checked) + .menu-toggle + .navbar ul {
+    display: none;
+  }
+
+  .navbar ul {
+    width: 10rem;
+    align-items: start;
+  }
+
+  .navbar ul li {
+    margin: .4rem;
+  }
+}
+
+@media (max-width: 426px) {
+  
+  /* Estilos para os produtos */
+  .product {
+    flex-direction: column; /* Ajusta o layout para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+  }
+
+  .product img {
+    margin-bottom: 1rem; /* Adiciona espaçamento abaixo da imagem */
+  }
+
+  .product-info {
+    text-align: center; /* Centraliza o texto */
+    padding: .5rem 1rem; /* Remove o espaçamento lateral */
+  }
+
+  .cta-button {
+    display: block; /* Transforma o botão em bloco para ocupar a largura disponível */
+    width: 95%; /* Ocupa toda a largura disponível */
+    margin-top: 1rem; /* Adiciona espaço acima do botão */
+  }
+}
