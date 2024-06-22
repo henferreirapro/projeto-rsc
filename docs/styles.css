@@ -7,48 +7,94 @@
 
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.6rem;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilos para o cabeçalho */
 .header {
-  text-align: center;
-  margin-bottom: 20px;
+  max-width: 60rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #14375C, #1D4166);
+  padding: 1rem;
+  color: #fff;
+  position: relative;
 }
 
 .header img {
-  max-width: 200px;
+  max-width: 12rem;
   height: auto;
 }
 
+
+/* Navbar */
+/* Estilos para esconder o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilos para o ícone do menu sanduíche */
+.menu-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none; /* Esconde o ícone por padrão */
+}
+
+/* Estilos para a lista de itens da navbar */
+.navbar {
+  position: absolute;
+  right: 1.2rem;
+  top: 20%;
+  transform: translateY(-20%);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-right: 1.2rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: #ccc;
+}
+
+
 /* Estilos para as seções de produtos */
 .product-section {
+  max-width: 60rem;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .product-section h2 {
   text-align: center;
-  margin-bottom: 20px;
-}
-
-
-/* estilo do hr */
-hr {
-  margin: 1.1rem 2rem;
-  
+  margin-bottom: 1.2rem;
 }
 
 .product {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 .product img {
@@ -59,7 +105,7 @@ hr {
 
 .product-info {
   flex: 1;
-  padding: 0 20px;
+  padding: 0 1.2rem;
 }
 
 .product-info h3 {
@@ -73,7 +119,7 @@ hr {
 .cta-button {
   display: inline-block;
   margin: .5rem;
-  padding: 10px 20px;
+  padding: 10px 1.2rem;
   background-color: #007bff;
   color: #fff;
   text-decoration: none;
@@ -85,16 +131,25 @@ hr {
   background-color: #0056b3;
 }
 
+
+/* estilo do hr */
+hr {
+  margin: 1.1rem 2rem;
+  
+}
+
+
 /* Estilos para o botão de contato via WhatsApp */
+
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.2rem;
+  right: 1.2rem;
   z-index: 999;
   background-color: #25D366;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 50%;
+  padding: .7rem 1.2rem;
+  border-radius: 1rem;
   text-decoration: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
@@ -104,20 +159,30 @@ hr {
   background-color: #128C7E;
 }
 
+.icon {
+  width: 2rem;
+  margin: .5rem;
+}
+
+.icon svg {
+  fill: #fff;
+}
+
 /* Estilos para o rodapé */
 .footer {
   display: flex;
-  align-items: center;
+  align-items: space;
   justify-content: center;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.2rem;
 }
 
 .social-icons {
-  /* margin-top: 10px; */
+  margin-top: .5rem;
 }
 
 .icon {
+  margin-top: .8rem;
   color: #fff;
 }
 
@@ -130,4 +195,69 @@ hr {
 
 .social-icons a:hover {
   color: #0056b3;
+}
+
+
+/* MEDIA QUERYS */
+
+/* Media Query para menu sanduíche em telas menores */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostra o ícone do menu sanduíche */
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+  }
+
+  /* Quando o checkbox está marcado, exibe a lista de itens da navbar */
+  #menu-toggle:checked + .menu-toggle + .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 3rem; /* Ajusta a posição abaixo do botão */
+    right: 0;
+    background-color: #1D4166;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* Esconde a lista de itens quando o checkbox não está marcado */
+  #menu-toggle:not(:checked) + .menu-toggle + .navbar ul {
+    display: none;
+  }
+
+  .navbar ul {
+    width: 10rem;
+    align-items: start;
+  }
+
+  .navbar ul li {
+    margin: .4rem;
+  }
+}
+
+@media (max-width: 426px) {
+  
+  /* Estilos para os produtos */
+  .product {
+    flex-direction: column; /* Ajusta o layout para empilhar os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+  }
+
+  .product img {
+    margin-bottom: 1rem; /* Adiciona espaçamento abaixo da imagem */
+  }
+
+  .product-info {
+    text-align: center; /* Centraliza o texto */
+    padding: .5rem 1rem; /* Remove o espaçamento lateral */
+  }
+
+  .cta-button {
+    display: block; /* Transforma o botão em bloco para ocupar a largura disponível */
+    width: 95%; /* Ocupa toda a largura disponível */
+    margin-top: 1rem; /* Adiciona espaço acima do botão */
+  }
 }
