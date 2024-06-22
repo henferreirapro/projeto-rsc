@@ -44,6 +44,7 @@ body {
   font-size: 1.8rem;
   cursor: pointer;
   display: none; /* Esconde o ícone por padrão */
+  color: #fff;
 }
 
 /* Estilos para a lista de itens da navbar */
