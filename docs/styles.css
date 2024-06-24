@@ -141,7 +141,6 @@ hr {
 
 
 /* Estilos para o botão de contato via WhatsApp */
-
 .whatsapp-button {
   position: fixed;
   bottom: 1.2rem;
@@ -209,6 +208,7 @@ hr {
     top: 1rem;
     right: 1rem;
     z-index: 1000;
+    color: #fff;
   }
 
   /* Quando o checkbox está marcado, exibe a lista de itens da navbar */
@@ -218,7 +218,7 @@ hr {
     position: absolute;
     top: 3rem; /* Ajusta a posição abaixo do botão */
     right: 0;
-    background-color: #1D4166;
+    background-color: #214972;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
